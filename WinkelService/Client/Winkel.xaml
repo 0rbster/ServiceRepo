@@ -1,0 +1,23 @@
+﻿<Window x:Class="Client.Winkel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="Winkel" Height="257.971" Width="573.913">
+    <Grid Margin="0,0,0,15">
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="10,35,0,0" VerticalAlignment="Top" Width="222"/>
+        <Label Content="Winkelmandje:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="92"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="334,35,0,0" VerticalAlignment="Top" Width="222"/>
+        <Label Content="Producten:" HorizontalAlignment="Left" Margin="334,4,0,0" VerticalAlignment="Top"/>
+        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="246,48,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="246,82,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Verversen" HorizontalAlignment="Left" Margin="481,7,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Saldo:" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;saldo&gt;" HorizontalAlignment="Left" Margin="52,140,0,0" VerticalAlignment="Top"/>
+        <Button Content="Bestelgeschiedenis" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button Content="Afronden" HorizontalAlignment="Left" Margin="157,140,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WinkelDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="WinkelDbModelStoreContainer">
+    <EntitySet Name="GebruikerSet" EntityType="WinkelDbModel.Store.GebruikerSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductSet" EntityType="WinkelDbModel.Store.ProductSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BestellingSet" EntityType="WinkelDbModel.Store.BestellingSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BestelregelSet" EntityType="WinkelDbModel.Store.BestelregelSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="GebruikerBestelling" Association="WinkelDbModel.Store.GebruikerBestelling">
+      <End Role="Gebruiker" EntitySet="GebruikerSet" />
+      <End Role="Bestelling" EntitySet="BestellingSet" />
+    </AssociationSet>
+    <AssociationSet Name="BestelregelBestelling" Association="WinkelDbModel.Store.BestelregelBestelling">
+      <End Role="Bestelling" EntitySet="BestellingSet" />
+      <End Role="Bestelregel" EntitySet="BestelregelSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductBestelregel" Association="WinkelDbModel.Store.ProductBestelregel">
+      <End Role="Product" EntitySet="ProductSet" />
+      <End Role="Bestelregel" EntitySet="BestelregelSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="GebruikerSet">
+    <Key>
+      <PropertyRef Name="GebruikerID" />
+    </Key>
+    <Property Name="GebruikerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gebruikersnaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Wachtwoord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Saldo" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSet">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prijs" Type="float" Nullable="false" />
+    <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hoeveelheid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BestellingSet">
+    <Key>
+      <PropertyRef Name="BestellingID" />
+    </Key>
+    <Property Name="BestellingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Besteldatum" Type="datetime" Nullable="false" />
+    <Property Name="GebruikerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BestelregelSet">
+    <Key>
+      <PropertyRef Name="BestelRegelID" />
+    </Key>
+    <Property Name="BestelRegelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hoeveelheid" Type="int" Nullable="false" />
+    <Property Name="BestellingID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="GebruikerBestelling">
+    <End Role="Gebruiker" Type="WinkelDbModel.Store.GebruikerSet" Multiplicity="1" />
+    <End Role="Bestelling" Type="WinkelDbModel.Store.BestellingSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gebruiker">
+        <PropertyRef Name="GebruikerID" />
+      </Principal>
+      <Dependent Role="Bestelling">
+        <PropertyRef Name="GebruikerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BestelregelBestelling">
+    <End Role="Bestelling" Type="WinkelDbModel.Store.BestellingSet" Multiplicity="1" />
+    <End Role="Bestelregel" Type="WinkelDbModel.Store.BestelregelSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bestelling">
+        <PropertyRef Name="BestellingID" />
+      </Principal>
+      <Dependent Role="Bestelregel">
+        <PropertyRef Name="BestellingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductBestelregel">
+    <End Role="Product" Type="WinkelDbModel.Store.ProductSet" Multiplicity="1" />
+    <End Role="Bestelregel" Type="WinkelDbModel.Store.BestelregelSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Bestelregel">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="WinkelDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="WinkelDbModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GebruikerSet" EntityType="WinkelDbModel.Gebruiker" />
+          <EntitySet Name="ProductSet" EntityType="WinkelDbModel.Product" />
+          <EntitySet Name="BestellingSet" EntityType="WinkelDbModel.Bestelling" />
+          <EntitySet Name="BestelregelSet" EntityType="WinkelDbModel.Bestelregel" />
+          <AssociationSet Name="GebruikerBestelling" Association="WinkelDbModel.GebruikerBestelling">
+            <End Role="Gebruiker" EntitySet="GebruikerSet" />
+            <End Role="Bestelling" EntitySet="BestellingSet" />
+          </AssociationSet>
+          <AssociationSet Name="BestelregelBestelling" Association="WinkelDbModel.BestelregelBestelling">
+            <End Role="Bestelling" EntitySet="BestellingSet" />
+            <End Role="Bestelregel" EntitySet="BestelregelSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductBestelregel" Association="WinkelDbModel.ProductBestelregel">
+            <End Role="Product" EntitySet="ProductSet" />
+            <End Role="Bestelregel" EntitySet="BestelregelSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Gebruiker">
+          <Key>
+            <PropertyRef Name="GebruikerID" />
+          </Key>
+          <Property Name="GebruikerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gebruikersnaam" Type="String" Nullable="false" />
+          <Property Name="Wachtwoord" Type="String" Nullable="false" />
+          <Property Name="Saldo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Bestelling" Relationship="WinkelDbModel.GebruikerBestelling" FromRole="Gebruiker" ToRole="Bestelling" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prijs" Type="Double" Nullable="false" />
+          <Property Name="Naam" Type="String" Nullable="false" />
+          <Property Name="Hoeveelheid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bestelregel" Relationship="WinkelDbModel.ProductBestelregel" FromRole="Product" ToRole="Bestelregel" />
+        </EntityType>
+        <EntityType Name="Bestelling">
+          <Key>
+            <PropertyRef Name="BestellingID" />
+          </Key>
+          <Property Name="BestellingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Besteldatum" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Gebruiker" Relationship="WinkelDbModel.GebruikerBestelling" FromRole="Bestelling" ToRole="Gebruiker" />
+          <Property Name="GebruikerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bestelregel" Relationship="WinkelDbModel.BestelregelBestelling" FromRole="Bestelling" ToRole="Bestelregel" />
+        </EntityType>
+        <EntityType Name="Bestelregel">
+          <Key>
+            <PropertyRef Name="BestelRegelID" />
+          </Key>
+          <Property Name="BestelRegelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hoeveelheid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bestelling" Relationship="WinkelDbModel.BestelregelBestelling" FromRole="Bestelregel" ToRole="Bestelling" />
+          <Property Name="BestellingID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="WinkelDbModel.ProductBestelregel" FromRole="Bestelregel" ToRole="Product" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="GebruikerBestelling">
+          <End Type="WinkelDbModel.Gebruiker" Role="Gebruiker" Multiplicity="1" />
+          <End Type="WinkelDbModel.Bestelling" Role="Bestelling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gebruiker">
+              <PropertyRef Name="GebruikerID" />
+            </Principal>
+            <Dependent Role="Bestelling">
+              <PropertyRef Name="GebruikerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BestelregelBestelling">
+          <End Type="WinkelDbModel.Bestelling" Role="Bestelling" Multiplicity="1" />
+          <End Type="WinkelDbModel.Bestelregel" Role="Bestelregel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bestelling">
+              <PropertyRef Name="BestellingID" />
+            </Principal>
+            <Dependent Role="Bestelregel">
+              <PropertyRef Name="BestellingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductBestelregel">
+          <End Type="WinkelDbModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="WinkelDbModel.Bestelregel" Role="Bestelregel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Bestelregel">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WinkelDbModelStoreContainer" CdmEntityContainer="WinkelDbModelContainer">
+    <EntitySetMapping Name="GebruikerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(WinkelDbModel.Gebruiker)">
+        <MappingFragment StoreEntitySet="GebruikerSet">
+          <ScalarProperty Name="GebruikerID" ColumnName="GebruikerID" />
+          <ScalarProperty Name="Gebruikersnaam" ColumnName="Gebruikersnaam" />
+          <ScalarProperty Name="Wachtwoord" ColumnName="Wachtwoord" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSet">
+      <EntityTypeMapping TypeName="IsTypeOf(WinkelDbModel.Product)">
+        <MappingFragment StoreEntitySet="ProductSet">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Prijs" ColumnName="Prijs" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="Hoeveelheid" ColumnName="Hoeveelheid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestellingSet">
+      <EntityTypeMapping TypeName="IsTypeOf(WinkelDbModel.Bestelling)">
+        <MappingFragment StoreEntitySet="BestellingSet">
+          <ScalarProperty Name="BestellingID" ColumnName="BestellingID" />
+          <ScalarProperty Name="Besteldatum" ColumnName="Besteldatum" />
+          <ScalarProperty Name="GebruikerID" ColumnName="GebruikerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestelregelSet">
+      <EntityTypeMapping TypeName="IsTypeOf(WinkelDbModel.Bestelregel)">
+        <MappingFragment StoreEntitySet="BestelregelSet">
+          <ScalarProperty Name="BestelRegelID" ColumnName="BestelRegelID" />
+          <ScalarProperty Name="Hoeveelheid" ColumnName="Hoeveelheid" />
+          <ScalarProperty Name="BestellingID" ColumnName="BestellingID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
