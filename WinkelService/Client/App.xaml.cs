@@ -11,6 +11,7 @@ namespace Client
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    /// verwijder dit
     public partial class App : Application
     {
     }

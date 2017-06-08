@@ -17,6 +17,7 @@ namespace Client
     /// <summary>
     /// Interaction logic for Registreer.xaml
     /// </summary>
+    /// verwijder dit
     public partial class Registreer : Window
     {
         public Registreer()

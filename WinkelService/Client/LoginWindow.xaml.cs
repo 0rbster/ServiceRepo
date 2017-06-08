@@ -18,6 +18,7 @@ namespace Client
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// verwijder dit
     public partial class MainWindow : Window
     {
         public MainWindow()

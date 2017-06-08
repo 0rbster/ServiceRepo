@@ -17,6 +17,7 @@ namespace Client
     /// <summary>
     /// Interaction logic for Winkel.xaml
     /// </summary>
+    /// verwijder dit
     public partial class Winkel : Window
     {
         public Winkel()

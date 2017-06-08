@@ -17,6 +17,7 @@ namespace Client
     /// <summary>
     /// Interaction logic for Bestelgeschienis.xaml
     /// </summary>
+    /// verwijder dit
     public partial class Bestelgeschienis : Window
     {
         public Bestelgeschienis()
