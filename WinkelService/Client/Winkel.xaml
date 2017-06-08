@@ -15,7 +15,7 @@
         <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="246,82,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button Content="Verversen" HorizontalAlignment="Left" Margin="481,7,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Saldo:" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
-        <Label Content="&lt;saldo&gt;" HorizontalAlignment="Left" Margin="52,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;saldo&gt;" HorizontalAlignment="Left" Margin="57,140,0,0" VerticalAlignment="Top"/>
         <Button Content="Bestelgeschiedenis" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Width="114"/>
         <Button Content="Afronden" HorizontalAlignment="Left" Margin="157,140,0,0" VerticalAlignment="Top" Width="75"/>
 
