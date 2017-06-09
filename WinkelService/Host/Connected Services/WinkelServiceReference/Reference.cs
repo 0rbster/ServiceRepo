@@ -12,63 +12,63 @@ namespace Host.WinkelServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WinkelServiceReference.IDateService")]
-    public interface IDateService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WinkelServiceReference.IGebruikerService")]
+    public interface IGebruikerService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDateService/GetDate", ReplyAction="http://tempuri.org/IDateService/GetDateResponse")]
-        System.DateTime GetDate();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGebruikerService/Registreer", ReplyAction="http://tempuri.org/IGebruikerService/RegistreerResponse")]
+        string Registreer(string gebruikersnaam);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDateService/GetDate", ReplyAction="http://tempuri.org/IDateService/GetDateResponse")]
-        System.Threading.Tasks.Task<System.DateTime> GetDateAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGebruikerService/Registreer", ReplyAction="http://tempuri.org/IGebruikerService/RegistreerResponse")]
+        System.Threading.Tasks.Task<string> RegistreerAsync(string gebruikersnaam);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDateService/Add", ReplyAction="http://tempuri.org/IDateService/AddResponse")]
-        int Add(int x, int y);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGebruikerService/Login", ReplyAction="http://tempuri.org/IGebruikerService/LoginResponse")]
+        int Login(int x, int y);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDateService/Add", ReplyAction="http://tempuri.org/IDateService/AddResponse")]
-        System.Threading.Tasks.Task<int> AddAsync(int x, int y);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGebruikerService/Login", ReplyAction="http://tempuri.org/IGebruikerService/LoginResponse")]
+        System.Threading.Tasks.Task<int> LoginAsync(int x, int y);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IDateServiceChannel : Host.WinkelServiceReference.IDateService, System.ServiceModel.IClientChannel {
+    public interface IGebruikerServiceChannel : Host.WinkelServiceReference.IGebruikerService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DateServiceClient : System.ServiceModel.ClientBase<Host.WinkelServiceReference.IDateService>, Host.WinkelServiceReference.IDateService {
+    public partial class GebruikerServiceClient : System.ServiceModel.ClientBase<Host.WinkelServiceReference.IGebruikerService>, Host.WinkelServiceReference.IGebruikerService {
         
-        public DateServiceClient() {
+        public GebruikerServiceClient() {
         }
         
-        public DateServiceClient(string endpointConfigurationName) : 
+        public GebruikerServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public DateServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public GebruikerServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public DateServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public GebruikerServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public DateServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public GebruikerServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public System.DateTime GetDate() {
-            return base.Channel.GetDate();
+        public string Registreer(string gebruikersnaam) {
+            return base.Channel.Registreer(gebruikersnaam);
         }
         
-        public System.Threading.Tasks.Task<System.DateTime> GetDateAsync() {
-            return base.Channel.GetDateAsync();
+        public System.Threading.Tasks.Task<string> RegistreerAsync(string gebruikersnaam) {
+            return base.Channel.RegistreerAsync(gebruikersnaam);
         }
         
-        public int Add(int x, int y) {
-            return base.Channel.Add(x, y);
+        public int Login(int x, int y) {
+            return base.Channel.Login(x, y);
         }
         
-        public System.Threading.Tasks.Task<int> AddAsync(int x, int y) {
-            return base.Channel.AddAsync(x, y);
+        public System.Threading.Tasks.Task<int> LoginAsync(int x, int y) {
+            return base.Channel.LoginAsync(x, y);
         }
     }
 }

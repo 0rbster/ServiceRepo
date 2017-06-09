@@ -16,10 +16,10 @@ namespace Client.WinkelServiceReference {
     public interface IGebruikerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGebruikerService/Registreer", ReplyAction="http://tempuri.org/IGebruikerService/RegistreerResponse")]
-        bool Registreer(string gebruikersnaam);
+        string Registreer(string gebruikersnaam);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGebruikerService/Registreer", ReplyAction="http://tempuri.org/IGebruikerService/RegistreerResponse")]
-        System.Threading.Tasks.Task<bool> RegistreerAsync(string gebruikersnaam);
+        System.Threading.Tasks.Task<string> RegistreerAsync(string gebruikersnaam);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGebruikerService/Login", ReplyAction="http://tempuri.org/IGebruikerService/LoginResponse")]
         int Login(int x, int y);
@@ -55,11 +55,11 @@ namespace Client.WinkelServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public bool Registreer(string gebruikersnaam) {
+        public string Registreer(string gebruikersnaam) {
             return base.Channel.Registreer(gebruikersnaam);
         }
         
-        public System.Threading.Tasks.Task<bool> RegistreerAsync(string gebruikersnaam) {
+        public System.Threading.Tasks.Task<string> RegistreerAsync(string gebruikersnaam) {
             return base.Channel.RegistreerAsync(gebruikersnaam);
         }
         

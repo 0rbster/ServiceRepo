@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WinkelService/DateService/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WinkelService/GebruikerService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8d6386f3-a149-4b82-8c96-3d09b2faacac" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WinkelService/DateService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="51029962-88d0-4e04-ba1b-97d898059283" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WinkelService/DateService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8b2b5d4d-fd02-4ec9-8293-5253c9cf547a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WinkelService/DateService/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="fc12d336-7b11-42f7-bb12-054b5adbe23a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WinkelService/GebruikerService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="36bde74f-ee18-4c8b-8895-2d90d2311b8d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WinkelService/GebruikerService/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="67a743f7-d0ef-406d-b7d0-e060f63608ec" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WinkelService/GebruikerService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

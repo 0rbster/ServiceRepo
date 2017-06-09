@@ -54,11 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\WinkelServiceReference\service.wsdl" />
-    <None Include="Connected Services\WinkelServiceReference\service.xsd">
+    <None Include="Connected Services\WinkelServiceReference\service1.wsdl" />
+    <None Include="Connected Services\WinkelServiceReference\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WinkelServiceReference\service1.xsd">
+    <None Include="Connected Services\WinkelServiceReference\service21.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
