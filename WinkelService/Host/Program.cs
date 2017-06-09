@@ -15,7 +15,7 @@ namespace Host
                 new ServiceHost(typeof(WinkelService.GebruikerService)))
             {
                 host.Open();
-                Console.WriteLine("Date service running...");
+                Console.WriteLine("User service running...");
                 Console.WriteLine("Press enter to terminate Host.");
                 Console.ReadKey();
             }
