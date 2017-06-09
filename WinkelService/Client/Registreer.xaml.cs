@@ -28,13 +28,15 @@ namespace Client
                 using (WinkelServiceReference.GebruikerServiceClient client =
                     new WinkelServiceReference.GebruikerServiceClient())
                 {
-                    if (client.Registreer(Gebruikersnaam.Text) != null)
+                    if (client.Registreer(Gebruikersnaam.Text) == Gebruikersnaam.Text)
                     {
-                        NieuwWachtwoord.Content = client.Registreer(Gebruikersnaam.Text);
+                        Console.WriteLine("User bestaat");
+                        NieuwWachtwoord.Content = "Gebruikersnaam " + Gebruikersnaam.Text + " bestaat al.";
                     }
                     else
                     {
-                        NieuwWachtwoord.Content = "Voer een gebruikersnaam in";
+                        NieuwWachtwoord.Content = "Registratie";
+                        NieuwWachtwoord.Content = client.Registreer(Gebruikersnaam.Text);
                     }
                 }
             }

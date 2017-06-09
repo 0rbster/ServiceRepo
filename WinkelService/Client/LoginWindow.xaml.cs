@@ -25,5 +25,12 @@ namespace Client
         {
             InitializeComponent();
         }
+
+        private void RegistreerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Registreer regWindow = new Registreer();
+            regWindow.Show();
+            this.Close();
+        }
     }
 }
