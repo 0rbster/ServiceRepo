@@ -24,10 +24,19 @@ namespace Client
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (Gebruikersnaam.Text != null)
-            using (WinkelServiceReference.GebruikerServiceClient client =
-                new WinkelServiceReference.GebruikerServiceClient())
             {
-                client.Registreer(Gebruikersnaam.Text);
+                using (WinkelServiceReference.GebruikerServiceClient client =
+                    new WinkelServiceReference.GebruikerServiceClient())
+                {
+                    if (client.Registreer(Gebruikersnaam.Text) != null)
+                    {
+                        NieuwWachtwoord.Content = client.Registreer(Gebruikersnaam.Text);
+                    }
+                    else
+                    {
+                        NieuwWachtwoord.Content = "Voer een gebruikersnaam in";
+                    }
+                }
             }
         }
 
