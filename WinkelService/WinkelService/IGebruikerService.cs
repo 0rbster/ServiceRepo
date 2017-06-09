@@ -11,7 +11,7 @@ namespace WinkelService
     public interface IGebruikerService
     {
         [OperationContract]
-        bool Registreer(string gebruikersnaam);
+        string Registreer(string gebruikersnaam);
         [OperationContract]
         int Login(int x, int y);
 

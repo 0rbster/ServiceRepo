@@ -14,10 +14,6 @@ using System.Windows.Shapes;
 
 namespace Client
 {
-    /// <summary>
-    /// Interaction logic for Registreer.xaml
-    /// </summary>
-    /// verwijder dit
     public partial class Registreer : Window
     {
         public Registreer()
@@ -31,10 +27,7 @@ namespace Client
             using (WinkelServiceReference.GebruikerServiceClient client =
                 new WinkelServiceReference.GebruikerServiceClient())
             {
-                if (client.Registreer(Gebruikersnaam.Text))
-                {
-                    NieuwWachtwoord.SetValue("");
-                }
+                client.Registreer(Gebruikersnaam.Text);
             }
         }
 
