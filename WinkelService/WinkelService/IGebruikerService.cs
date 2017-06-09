@@ -8,11 +8,12 @@ using System.Text;
 namespace WinkelService
 {
     [ServiceContract]
-    public interface IDateService
+    public interface IGebruikerService
     {
         [OperationContract]
-        DateTime GetDate();
+        bool Registreer(string gebruikersnaam);
         [OperationContract]
-        int Add(int x, int y);
+        int Login(int x, int y);
+
     }
 }

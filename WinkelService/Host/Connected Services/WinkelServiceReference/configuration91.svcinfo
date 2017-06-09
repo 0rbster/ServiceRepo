@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="PuDm4UCBmXhaRwuDMOYK6WS1Rwc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="QbyHhbvK+JceerigawrkTx6sySU=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IDateService">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IDateService" contract="MyDateService.IDateService" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WinkelService/DateService/" bindingConfiguration="BasicHttpBinding_IDateService">
+    <endpoint name="BasicHttpBinding_IDateService" contract="WinkelServiceReference.IDateService" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WinkelService/DateService/" bindingConfiguration="BasicHttpBinding_IDateService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:8733/Design_Time_Addresses/WinkelService/DateService/</serializedValue>
@@ -127,7 +127,7 @@
           <serializedValue>BasicHttpBinding_IDateService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>MyDateService.IDateService</serializedValue>
+          <serializedValue>WinkelServiceReference.IDateService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

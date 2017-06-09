@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Host.MyDateService {
+namespace Host.WinkelServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MyDateService.IDateService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WinkelServiceReference.IDateService")]
     public interface IDateService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDateService/GetDate", ReplyAction="http://tempuri.org/IDateService/GetDateResponse")]
@@ -29,12 +29,12 @@ namespace Host.MyDateService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IDateServiceChannel : Host.MyDateService.IDateService, System.ServiceModel.IClientChannel {
+    public interface IDateServiceChannel : Host.WinkelServiceReference.IDateService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DateServiceClient : System.ServiceModel.ClientBase<Host.MyDateService.IDateService>, Host.MyDateService.IDateService {
+    public partial class DateServiceClient : System.ServiceModel.ClientBase<Host.WinkelServiceReference.IDateService>, Host.WinkelServiceReference.IDateService {
         
         public DateServiceClient() {
         }

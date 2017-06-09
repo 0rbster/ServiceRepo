@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\MyDateService\Reference.cs">
+    <Compile Include="Connected Services\WinkelServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -54,11 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\MyDateService\service.wsdl" />
-    <None Include="Connected Services\MyDateService\service.xsd">
+    <None Include="Connected Services\WinkelServiceReference\service.wsdl" />
+    <None Include="Connected Services\WinkelServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MyDateService\service1.xsd">
+    <None Include="Connected Services\WinkelServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -66,16 +66,16 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\MyDateService\" />
+    <WCFMetadataStorage Include="Connected Services\WinkelServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MyDateService\configuration91.svcinfo" />
+    <None Include="Connected Services\WinkelServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MyDateService\configuration.svcinfo" />
+    <None Include="Connected Services\WinkelServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MyDateService\Reference.svcmap">
+    <None Include="Connected Services\WinkelServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -27,6 +27,19 @@ namespace Client
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (Gebruikersnaam.Text != null)
+            using (WinkelServiceReference.GebruikerServiceClient client =
+                new WinkelServiceReference.GebruikerServiceClient())
+            {
+                if (client.Registreer(Gebruikersnaam.Text))
+                {
+                    NieuwWachtwoord.SetValue("");
+                }
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
 
         }
     }
