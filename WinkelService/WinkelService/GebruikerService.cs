@@ -25,8 +25,7 @@ namespace WinkelService
                     else
                     {
                         char[] gebruikersnaamArray = gebruikersnaam.ToCharArray();
-                        gebruikersnaamArray.Reverse();
-                        wachtwoord = gebruikersnaamArray.ToString();
+                        wachtwoord = gebruikersnaamArray.Reverse().ToString();
                         Gebruiker gebruiker =
                             new Gebruiker() {Gebruikersnaam = gebruikersnaam, Wachtwoord = wachtwoord};
                         ctx.GebruikerSet.Add(gebruiker);
