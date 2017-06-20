@@ -12,13 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Client.WinkelServiceReference;
 
 namespace Client
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// verwijder dit
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -31,6 +31,16 @@ namespace Client
             Registreer regWindow = new Registreer();
             regWindow.Show();
             this.Close();
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            var gebruikersnaam = Gebruikersnaam.Text;
+            var wachtwoord = Wachtwoord.Password.ToString();
+            using (GebruikerServiceClient client = new GebruikerServiceClient())
+            {
+                client.Login(1,2);
+            }
         }
     }
 }

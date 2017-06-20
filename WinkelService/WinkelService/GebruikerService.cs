@@ -18,10 +18,20 @@ namespace WinkelService
                 try
                 {
                     var gebruikersnamen = from gebruiker in ctx.GebruikerSet select gebruiker.Gebruikersnaam;
-                    Console.WriteLine("TEST2");
+
+                    if (!gebruikersnamen.Any())
+                    {
+                        char[] gebruikersnaamArray = gebruikersnaam.ToCharArray();
+                        wachtwoord = gebruikersnaamArray.Reverse().ToString();
+                        Console.WriteLine(wachtwoord);
+                        Gebruiker gebruiker =
+                            new Gebruiker() { Gebruikersnaam = gebruikersnaam, Wachtwoord = wachtwoord, Saldo = 20.00 };
+                        ctx.GebruikerSet.Add(gebruiker);
+                        return wachtwoord;
+                    }
+
                     foreach (var g in gebruikersnamen)
                     {
-                        Console.WriteLine(g);
                         if (g == gebruikersnaam)
                         {
                             Console.WriteLine(gebruikersnaam);
@@ -30,14 +40,20 @@ namespace WinkelService
                         char[] gebruikersnaamArray = gebruikersnaam.ToCharArray();
                         wachtwoord = gebruikersnaamArray.Reverse().ToString();
                         Console.WriteLine(wachtwoord);
-                        Gebruiker gebruiker =
-                            new Gebruiker() {Gebruikersnaam = gebruikersnaam, Wachtwoord = wachtwoord, Saldo = 20.00};
+                        Gebruiker gebruiker = new Gebruiker()
+                            {
+                                Gebruikersnaam = gebruikersnaam,
+                                Wachtwoord = wachtwoord,
+                                Saldo = 20.00
+                            };
                         ctx.GebruikerSet.Add(gebruiker);
-                        Console.WriteLine(wachtwoord);
                     }
                     ctx.SaveChanges();
                 }
-                catch (Exception ex) { Console.WriteLine(ex.Message);}
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
             return wachtwoord;
         }
